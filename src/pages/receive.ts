@@ -5,7 +5,6 @@ import {Constants} from "../model/Constants";
 import {VueVar, VueWatched} from "../lib/numbersLab/VueAnnotate";
 import {CoinUri} from "../model/CoinUri";
 import {Nfc} from "../model/Nfc";
-import {Cn} from "../model/Cn";
 
 let wallet : Wallet = DependencyInjectorInstance().getInstance(Wallet.name,'default', false);
 

@@ -6,7 +6,6 @@ import {Wallet} from "../model/Wallet";
 import {KeysRepository} from "../model/KeysRepository";
 import {BlockchainExplorerProvider} from "../providers/BlockchainExplorerProvider";
 import {BlockchainExplorerRpc2} from "../model/blockchain/BlockchainExplorerRpc2";
-import {Cn, CnUtils} from "../model/Cn";
 
 AppState.enableLeftMenu();
 

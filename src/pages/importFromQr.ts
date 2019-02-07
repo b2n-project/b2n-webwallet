@@ -9,7 +9,6 @@ import {BlockchainExplorerRpc2} from "../model/blockchain/BlockchainExplorerRpc2
 import {QRReader} from "../model/QRReader";
 import {CoinUri} from "../model/CoinUri";
 import {Mnemonic} from "../model/Mnemonic";
-import {Cn, CnNativeBride, CnUtils} from "../model/Cn";
 
 AppState.enableLeftMenu();
 

@@ -10,7 +10,6 @@ import {AppState} from "../model/AppState";
 import {WalletRepository} from "../model/WalletRepository";
 import {Translations} from "../model/Translations";
 import {MnemonicLang} from "../model/MnemonicLang";
-import {Cn, CnNativeBride, CnRandom} from "../model/Cn";
 
 let blockchainExplorer : BlockchainExplorerRpc2 = BlockchainExplorerProvider.getInstance();
 

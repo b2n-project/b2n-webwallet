@@ -5,7 +5,6 @@ import {DestructableView} from "../lib/numbersLab/DestructableView";
 import {Constants} from "../model/Constants";
 import {AppState} from "../model/AppState";
 import {Transaction, TransactionIn} from "../model/Transaction";
-import {Cn} from "../model/Cn";
 
 let wallet : Wallet = DependencyInjectorInstance().getInstance(Wallet.name,'default', false);
 let blockchainExplorer = DependencyInjectorInstance().getInstance(Constants.BLOCKCHAIN_EXPLORER);

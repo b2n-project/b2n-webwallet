@@ -8,7 +8,6 @@ import {BlockchainExplorerProvider} from "../providers/BlockchainExplorerProvide
 import {BlockchainExplorerRpc2} from "../model/blockchain/BlockchainExplorerRpc2";
 import {Mnemonic} from "../model/Mnemonic";
 import {MnemonicLang} from "../model/MnemonicLang";
-import {Cn} from "../model/Cn";
 
 AppState.enableLeftMenu();
 
