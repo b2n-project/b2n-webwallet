@@ -54,7 +54,7 @@ class ImportView extends DestructableView{
 				if(detectedMnemonicLang !== null){
 					let mnemonic_decoded = Mnemonic.mn_decode(self.mnemonicSeed, detectedMnemonicLang);
 					if(mnemonic_decoded !== null) {
-						let keys = Cn.create_address(mnemonic_decoded);
+						let keys = cnUtil.create_address(mnemonic_decoded);
 						newWallet.keys = KeysRepository.fromPriv(keys.spend.sec, keys.view.sec);
 					}else{
 						swal({
@@ -77,12 +77,12 @@ class ImportView extends DestructableView{
 			}else if(self.privateSpendKey !== null){
 				let viewkey = self.privateViewKey !== null ? self.privateViewKey : '';
 				if(viewkey === ''){
-					viewkey = Cn.generate_keys(CnUtils.cn_fast_hash(self.privateSpendKey)).sec;
+					viewkey = cnUtil.generate_keys(cnUtil.cn_fast_hash(self.privateSpendKey)).sec;
 				}
 				newWallet.keys = KeysRepository.fromPriv(self.privateSpendKey, viewkey);
 
 			}else if(self.privateSpendKey === null && self.privateViewKey !== null && self.publicAddress !== null){
-				let decodedPublic = Cn.decode_address(self.publicAddress);
+				let decodedPublic = cnUtil.decode_address(self.publicAddress);
 				newWallet.keys = {
 					priv:{
 						spend:'',
@@ -213,10 +213,6 @@ class ImportView extends DestructableView{
 		this.forceInsecurePassword = true;
 	}
 
-	destruct(): Promise<void> {
-		this.stopScan();
-		return super.destruct();
-	}
 }
 
 new ImportView('#app');

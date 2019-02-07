@@ -76,7 +76,7 @@ class AccountView extends DestructableView{
 		if(this.paymentId !== '' && this.paymentId.length <= 8) {
 			let paymentId8 = ('00000000'+this.stringToHex(this.paymentId)).slice(-16);
 			console.log(paymentId8+'==>'+this.stringToHex(this.paymentId));
-			this.address = Cn.get_account_integrated_address(wallet.getPublicAddress(), paymentId8);
+			this.address = cnUtil.get_account_integrated_address(wallet.getPublicAddress(), paymentId8);
 		}else
 			this.address = wallet.getPublicAddress();
 	}
@@ -84,7 +84,7 @@ class AccountView extends DestructableView{
 	generateQrCode(){
 		let el = kjua({
 			text: this.getAddressEncoded(),
-			image:document.getElementById('B2NQrCodeLogo'),
+			image:document.getElementById('qrCodeLogo'),
 			size:300,
 			mode:'image',
 			mSize: 10,

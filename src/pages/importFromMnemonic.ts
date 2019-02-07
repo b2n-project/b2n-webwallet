@@ -76,7 +76,7 @@ class ImportView extends DestructableView{
 
 			let mnemonic_decoded = Mnemonic.mn_decode(mnemonic, current_lang);
 			if(mnemonic_decoded !== null) {
-				let keys = Cn.create_address(mnemonic_decoded);
+				let keys = cnUtil.create_address(mnemonic_decoded);
 
 				let newWallet = new Wallet();
 				newWallet.keys = KeysRepository.fromPriv(keys.spend.sec, keys.view.sec);

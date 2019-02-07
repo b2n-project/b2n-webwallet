@@ -8,7 +8,6 @@ import {Transaction, TransactionIn} from "../model/Transaction";
 
 let wallet : Wallet = DependencyInjectorInstance().getInstance(Wallet.name,'default', false);
 let blockchainExplorer = DependencyInjectorInstance().getInstance(Constants.BLOCKCHAIN_EXPLORER);
-(<any>window).wallet = wallet;
 
 class AccountView extends DestructableView{
 	@VueVar([]) transactions !: Transaction[];
@@ -50,8 +49,7 @@ class AccountView extends DestructableView{
 		let explorerUrlBlock = config.testnet ? config.testnetExplorerUrlBlock : config.mainnetExplorerUrlBlock;
 		let feesHtml = '';
 		if(transaction.getAmount() < 0)
-			feesHtml = `<div>`+i18n.t('accountPage.txDetails.feesOnTx')+`: `+Cn.formatMoneySymbol(transaction.fees)+`</a></div>`;
-
+			feesHtml = `<div>`+i18n.t('accountPage.txDetails.feesOnTx')+`: `+(transaction.fees / Math.pow(10, config.coinUnitPlaces))+`</a></div>`;
 		let paymentId = '';
 		if(transaction.paymentId !== ''){
 			paymentId = `<div>`+i18n.t('accountPage.txDetails.paymentId')+`: `+transaction.paymentId+`</a></div>`;
