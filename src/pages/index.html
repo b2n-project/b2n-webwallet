@@ -18,7 +18,7 @@
 	<div class="hideOnNative">
 		<div class="mainBlock">
 			<div class="actions">
-				<span id="main_logo"><img src="./assets/img/coin_white.png" alt="&#1180;"/> B2N</span>
+				<a><img src="./assets/img/logo.png"/></a>
 				<div class="right">
 					<a href="#" @click="loadWallet()" v-if="hasLocalWallet" class="btn mini basic">{{ $t("homepage.actions.loadWallet") }}</a>
 					<a href="#!import" class="btn mini">{{ $t("homepage.actions.importWallet") }}</a>
@@ -62,7 +62,7 @@
 					<div class="block">
 						<i class="fa fa-code" aria-hidden="true"></i><br/>
 						<h3>{{ $t("homepage.notes.openSource.title") }}</h3>
-						<a href="https://github.com/b2n-project/b2n-webwallet-js" target="_blank" rel="nofollow"><h4>{{ $t("homepage.notes.openSource.description") }}</h4></a>
+						<a href="https://github.com/b2n-project/b2n-webwallet" target="_blank" rel="nofollow"><h4>{{ $t("homepage.notes.openSource.description") }}</h4></a>
 					</div>
 				</div>
 			</div>
