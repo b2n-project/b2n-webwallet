@@ -105,7 +105,7 @@
 		"emptyWallet": "Jelenleg nincsen egyenleged ebben a tárcában.",
 		"waitSync": "Kérlek, várj, míg a tárca naprakész lesz",
 		"beReallyPatient": "A kezdeti beállítás némi időbe telhet...",
-		"getMSRAddress": "MSR fogadása"
+		"getB2NAddress": "B2N fogadása"
 	  },
 	  "txDetails":{
 		"title":"Tranzakciórészletek",
@@ -202,7 +202,7 @@
 	  }
 	},
 	"sendPage":{
-	  "title":"MSR küldése",
+	  "title":"B2N küldése",
 	  "sendBlock":{
 		"address":{
 		  "label":"Kedvezményezett címe",
@@ -269,7 +269,7 @@
 	  }
 	},
 	"receivePage":{
-	  "title":"MSR fogadása",
+	  "title":"B2N fogadása",
 	  "receiveBlock":{
 		"address":{
 		  "title":"Pénz fogadására szolgáló cím:",

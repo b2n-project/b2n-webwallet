@@ -105,7 +105,7 @@
 		"emptyWallet": "Αυτή τη στιγμή δεν έχετε χρήματα σε αυτό το πορτοφόλι.",
 		"waitSync": "Παρακαλώ περιμένετε μέχρι να ανανεωθεί το πορτοφόλι",
 		"beReallyPatient": "Η αρχική ρύθμιση μπορεί να διαρκέσει λίγη ώρα...",
-		"getMSRAddress": "Λήψη MSR"
+		"getB2NAddress": "Λήψη B2N"
 	  },
 	  "txDetails":{
 		"title":"Λεπτομέρειες συναλλαγής",
@@ -201,7 +201,7 @@
 	  }
 	},
 	"sendPage":{
-	  "title":"Στείλτε MSR",
+	  "title":"Στείλτε B2N",
 	  "sendBlock":{
 		"address":{
 		  "label":"Διεύθυνση παραλήπτη",
@@ -268,7 +268,7 @@
 	  }
 	},
 	"receivePage":{
-	  "title":"Λήψη MSR",
+	  "title":"Λήψη B2N",
 	  "receiveBlock":{
 		"address":{
 		  "title":"Η διεύθυνσή σας για λήψη χρημάτων:",
@@ -296,7 +296,7 @@
 	},
 	"miningPage":{
 	  "title":"Κάντε mining μέσω του φυλλομετρητή σας",
-	  "subtitle":"Υποστηρίξτε το δίκτυο και αμοιφθείτε με MSR",
+	  "subtitle":"Υποστηρίξτε το δίκτυο και αμοιφθείτε με B2N",
 	  "parameterBlock":{
 		"title":"Παράμετροι",
 		"labelDestinationAddress":"Πορτοφόλι για κατάθεση αμοιβών από mining",

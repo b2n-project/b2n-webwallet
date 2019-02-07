@@ -345,8 +345,8 @@ namespace dns_utils
 // TODO: parse the string in a less stupid way, probably with regex
 std::string address_from_txt_record(const std::string& s)
 {
-  // make sure the txt record has "oa1:msr" and find it
-  auto pos = s.find("oa1:msr");
+  // make sure the txt record has "oa1:b2n" and find it
+  auto pos = s.find("oa1:b2n");
   if (pos == std::string::npos)
     return {};
   // search from there to find "recipient_address="
@@ -358,14 +358,14 @@ std::string address_from_txt_record(const std::string& s)
   auto pos2 = s.find(";", pos);
   if (pos2 != std::string::npos)
   {
-    // length of address == 95, we can at least validate that much here
+    // length of address == 99, we can at least validate that much here
     if (pos2 - pos == 99)
     {
       return s.substr(pos, 99);
     }
-    else if (pos2 - pos == 106) // length of address == 106 --> integrated address
+    else if (pos2 - pos == 110) // length of address == 110 --> integrated address
     {
-      return s.substr(pos, 106);
+      return s.substr(pos, 110);
     }
   }
   return {};

@@ -105,7 +105,7 @@
 		"emptyWallet": "You currently have no funds in this wallet.",
 		"waitSync": "Please wait until the wallet is updated.",
 		"beReallyPatient": "The initial setup can take some time...",
-		"getMSRAddress": "Receive MSR"
+		"getB2NAddress": "Receive B2N"
 	  },
 	  "txDetails":{
 		"title":"Transaction details",
@@ -202,7 +202,7 @@
 	  }
 	},
 	"sendPage":{
-	  "title":"Send MSR",
+	  "title":"Send B2N",
 	  "sendBlock":{
 		"address":{
 		  "label":"Destination address",
@@ -269,7 +269,7 @@
 	  }
 	},
 	"receivePage":{
-	  "title":"Receive MSR",
+	  "title":"Receive B2N",
 	  "receiveBlock":{
 		"address":{
 		  "title":"Your address to receive funds:",
@@ -297,7 +297,7 @@
 	},
 	"miningPage":{
 	  "title":"Mine directly in your browser",
-	  "subtitle":"Support the network by mining and be rewarded with MSR",
+	  "subtitle":"Support the network by mining and be rewarded with B2N",
 	  "parameterBlock":{
 		"title":"Parameters",
 		"labelDestinationAddress":"Wallet to mine",

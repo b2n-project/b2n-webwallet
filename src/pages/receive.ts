@@ -85,7 +85,7 @@ class AccountView extends DestructableView{
 	generateQrCode(){
 		let el = kjua({
 			text: this.getAddressEncoded(),
-			image:document.getElementById('masariQrCodeLogo'),
+			image:document.getElementById('B2NQrCodeLogo'),
 			size:300,
 			mode:'image',
 			mSize: 10,
