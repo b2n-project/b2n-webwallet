@@ -1,9 +1,23 @@
-import {Cn} from "./Cn";
+/*
+ * Copyright (c) 2018, Gnock
+ * Copyright (c) 2018, The Masari Project
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 
 export class CoinUri{
 
-	static coinTxPrefix = config.coinUriPrefix;
-	static coinWalletPrefix = config.coinUriPrefix;
+	static coinTxPrefix = 'b2n:';
+	static coinWalletPrefix = 'b2n:';
+	static coinAddressLength = 99;
 
 	static decodeTx(str : string) : {
 		address:string,
@@ -19,11 +33,8 @@ export class CoinUri{
 			if(exploded.length == 0)
 				throw 'missing_address';
 
-			try {
-				Cn.decode_address(exploded[0]);
-			}catch(e){
+			if(exploded[0].length !== this.coinAddressLength)
 				throw 'invalid_address_length';
-			}
 
 			let decodedUri : any = {
 				address:exploded[0]
@@ -64,11 +75,8 @@ export class CoinUri{
 
 	static encodeTx(address : string, paymentId:string|null = null, amount : string|null=null, recipientName:string|null = null, description : string|null=null) : string{
 		let encoded = this.coinTxPrefix + address;
-		try {
-			Cn.decode_address(address);
-		}catch(e){
+		if(address.length !== this.coinAddressLength)
 			throw 'invalid_address_length';
-		}
 
 		if(paymentId !== null) encoded += '?tx_payment_id='+paymentId;
 		if(amount !== null) encoded+= '?tx_amount='+amount;
@@ -93,11 +101,8 @@ export class CoinUri{
 			if(exploded.length == 0)
 				throw 'missing_address';
 
-			try {
-				Cn.decode_address(exploded[0]);
-			}catch(e){
+			if(exploded[0].length !== this.coinAddressLength)
 				throw 'invalid_address_length';
-			}
 
 			let decodedUri : any = {
 				address:exploded[0]
@@ -152,11 +157,8 @@ export class CoinUri{
 
 	static encodeWalletKeys(address : string, spendKey : string, viewKey : string|null=null, height:number|null=null, encryptMethod:string|null=null,nonce:string|null=null){
 		let encoded = this.coinWalletPrefix + address;
-		try {
-			Cn.decode_address(address);
-		}catch(e){
+		if(address.length !== this.coinAddressLength)
 			throw 'invalid_address_length';
-		}
 
 		if(spendKey !== null) encoded += '?spend_key='+spendKey;
 		if(viewKey !== null) encoded+= '?view_key='+viewKey;

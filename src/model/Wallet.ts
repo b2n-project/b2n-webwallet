@@ -1,7 +1,22 @@
+/*
+ * Copyright (c) 2018, Gnock
+ * Copyright (c) 2018, The Masari Project
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
 import {Transaction, TransactionIn, TransactionOut} from "./Transaction";
 import {KeysRepository, UserKeys} from "./KeysRepository";
 import {Observable} from "../lib/numbersLab/Observable";
-import {Cn, CnTransactions} from "./Cn";
+import {CryptoUtils} from "./CryptoUtils";
 
 export type RawWalletOptions = {
 	checkMinerTx?:boolean,
@@ -121,6 +136,9 @@ export class Wallet extends Observable{
 
 		if(typeof raw.options !== 'undefined') wallet._options = WalletOptions.fromRaw(raw.options);
 		if(typeof raw.txPrivateKeys !== 'undefined') wallet.txPrivateKeys = raw.txPrivateKeys;
+
+		if(typeof raw.coinAddressPrefix !== 'undefined') wallet.coinAddressPrefix = raw.coinAddressPrefix;
+		else wallet.coinAddressPrefix = config.addressPrefix;
 
 		if(typeof raw.coinAddressPrefix !== 'undefined') wallet.coinAddressPrefix = raw.coinAddressPrefix;
 		else wallet.coinAddressPrefix = config.addressPrefix;
@@ -292,7 +310,7 @@ export class Wallet extends Observable{
 	}
 
 	getPublicAddress(){
-		return Cn.pubkeys_to_string(this.keys.pub.spend,this.keys.pub.view);
+		return cnUtil.pubkeys_to_string(this.keys.pub.spend,this.keys.pub.view);
 	}
 
 	recalculateIfNotViewOnly(){
@@ -309,13 +327,13 @@ export class Wallet extends Observable{
 				if(needDerivation) {
 					let derivation = '';
 					try {
-						derivation = Cn.generate_key_derivation(tx.txPubKey, this.keys.priv.view);//9.7ms
+						derivation = cnUtil.generate_key_derivation(tx.txPubKey, this.keys.priv.view);//9.7ms
 					} catch (e) {
 						continue;
 					}
 					for (let out of tx.outs) {
 						if (out.keyImage === '') {
-							let m_key_image = CnTransactions.generate_key_image_helper({
+							let m_key_image = CryptoUtils.generate_key_image_helper({
 								view_secret_key: this.keys.priv.view,
 								spend_secret_key: this.keys.priv.spend,
 								public_spend_key: this.keys.pub.spend,

@@ -8,8 +8,8 @@ declare var config : {
 	testnetExplorerUrlBlock: string,
 	testnet: boolean,
 	coinUnitPlaces: number,
-	txMinConfirms: number,         // corresponds to CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE in bitcoin2network
-	txCoinbaseMinConfirms: number, // corresponds to CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW in bitcoin2network
+	txMinConfirms: number,         // corresponds to CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE in Monero
+	txCoinbaseMinConfirms: number, // corresponds to CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW in Monero
 	coinSymbol: string,
 	openAliasPrefix: string,
 	coinName: string,
@@ -28,5 +28,4 @@ declare var config : {
 	idleWarningDuration: number,
 	maxBlockNumber: number,
 	avgBlockTime: number,
-	donationAddresses?:string[]
 };
