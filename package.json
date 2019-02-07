@@ -1,0 +1,21 @@
+{
+  "name": "b2nwebwallet",
+  "version": "1.0.0",
+  "description": "Fully client side web wallet for bitcoin2network",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^2.9.2",
+    "workbox-build": "^3.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b2n-project/b2n-webwallet.git"
+  },
+  "author": "CodingRonin",
+  "license": "BSD-3",
+  "bugs": {
+    "url": "https://github.com/b2n-project/b2n-webwallet/issues"
+  },
+  "homepage": "https://github.com/b2n-project/b2n-webwallet#readme"
+}
