@@ -1,6 +1,7 @@
 <?php
 
-$cacheLocation = getenv('cache_location') !== false ? getenv('cache_location') : __DIR__.'/cache';
-$daemonAddress = getenv('daemon_address') !== false ? getenv('daemon_address') : 'localhost';
-$rpcPort = getenv('daemon_rpc_port') !== false ? (int)getenv('daemon_rpc_port') : 19935;
+$testnet = false;
+$cacheLocation = __DIR__.'/'.($testnet ? 'cache-testnet' : 'cache');
+$daemonAddress = '127.0.0.1';
+$rpcPort = $testnet ? 19035 : 19935;
 $coinSymbol = 'b2n';
