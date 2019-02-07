@@ -1,16 +1,33 @@
+/*
+ * Copyright (c) 2018, Gnock
+ * Copyright (c) 2018, The Masari Project
+ *
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
 import {DestructableView} from "../lib/numbersLab/DestructableView";
 import {VueRequireFilter, VueVar, VueWatched} from "../lib/numbersLab/VueAnnotate";
 import {TransactionsExplorer} from "../model/TransactionsExplorer";
+import {WalletRepository} from "../model/WalletRepository";
 import {BlockchainExplorerRpc2, WalletWatchdog} from "../model/blockchain/BlockchainExplorerRpc2";
 import {Autowire, DependencyInjectorInstance} from "../lib/numbersLab/DependencyInjector";
+import {Constants} from "../model/Constants";
 import {Wallet} from "../model/Wallet";
+import {BlockchainExplorer} from "../model/blockchain/BlockchainExplorer";
 import {Url} from "../utils/Url";
 import {CoinUri} from "../model/CoinUri";
 import {QRReader} from "../model/QRReader";
 import {AppState} from "../model/AppState";
 import {BlockchainExplorerProvider} from "../providers/BlockchainExplorerProvider";
 import {NdefMessage, Nfc} from "../model/Nfc";
-import {Cn} from "../model/Cn";
 
 let wallet: Wallet = DependencyInjectorInstance().getInstance(Wallet.name, 'default', false);
 let blockchainExplorer: BlockchainExplorerRpc2 = BlockchainExplorerProvider.getInstance();
@@ -40,7 +57,7 @@ class SendView extends DestructableView {
 	qrReader: QRReader | null = null;
 	redirectUrlAfterSend: string | null = null;
 
-	ndefListener: ((data: NdefMessage) => void) | null = null;
+	ndefListener : ((data: NdefMessage)=>void)|null = null;
 
 	constructor(container: string) {
 		super(container);
@@ -74,9 +91,9 @@ class SendView extends DestructableView {
 		this.stopScan();
 	}
 
-	startNfcScan() {
+	startNfcScan(){
 		let self = this;
-		if (this.ndefListener === null) {
+		if(this.ndefListener === null) {
 			this.ndefListener = function (data: NdefMessage) {
 				if (data.text)
 					self.handleScanResult(data.text.content);
@@ -84,7 +101,7 @@ class SendView extends DestructableView {
 			};
 			this.nfc.listenNdef(this.ndefListener);
 			swal({
-				title: i18n.t('sendPage.waitingNfcModal.title'),
+				title:  i18n.t('sendPage.waitingNfcModal.title'),
 				html: i18n.t('sendPage.waitingNfcModal.content'),
 				onOpen: () => {
 					swal.showLoading();
@@ -92,13 +109,13 @@ class SendView extends DestructableView {
 				onClose: () => {
 					this.stopNfcScan();
 				}
-			}).then((result: any) => {
+			}).then((result : any) => {
 			});
 		}
 	}
 
-	stopNfcScan() {
-		if (this.ndefListener !== null)
+	stopNfcScan(){
+		if(this.ndefListener !== null)
 			this.nfc.removeNdef(this.ndefListener);
 		this.ndefListener = null;
 	}
@@ -111,12 +128,12 @@ class SendView extends DestructableView {
 
 	startScan() {
 		let self = this;
-		if (typeof window.QRScanner !== 'undefined') {
-			window.QRScanner.scan(function (err: any, result: any) {
+		if(typeof window.QRScanner !== 'undefined') {
+			window.QRScanner.scan(function (err : any, result : any){
 				if (err) {
-					if (err.name === 'SCAN_CANCELED') {
+					if(err.name === 'SCAN_CANCELED'){
 
-					} else {
+					}else{
 						alert(JSON.stringify(err));
 					}
 				} else {
@@ -128,7 +145,7 @@ class SendView extends DestructableView {
 			$('body').addClass('transparent');
 			$('#appContent').hide();
 			$('#nativeCameraPreview').show();
-		} else {
+		}else {
 			this.initQr();
 			if (this.qrReader) {
 				this.qrScanning = true;
@@ -140,7 +157,7 @@ class SendView extends DestructableView {
 		}
 	}
 
-	handleScanResult(result: string) {
+	handleScanResult(result : string){
 		console.log('Scan result:', result);
 		let self = this;
 		let parsed = false;
@@ -175,15 +192,15 @@ class SendView extends DestructableView {
 	}
 
 	stopScan() {
-		if (typeof window.QRScanner !== 'undefined') {
-			window.QRScanner.cancelScan(function (status: any) {
+		if(typeof window.QRScanner !== 'undefined') {
+			window.QRScanner.cancelScan(function (status:any){
 				console.log(status);
 			});
 			window.QRScanner.hide();
 			$('body').removeClass('transparent');
 			$('#appContent').show();
 			$('#nativeCameraPreview').hide();
-		} else {
+		}else {
 			if (this.qrReader !== null) {
 				this.qrReader.stop();
 				this.qrReader = null;
@@ -251,9 +268,9 @@ class SendView extends DestructableView {
 								swal({
 									title: i18n.t('sendPage.confirmTransactionModal.title'),
 									html: i18n.t('sendPage.confirmTransactionModal.content', {
-										amount: Cn.formatMoneySymbol(amount),
-										fees: Cn.formatMoneySymbol(feesAmount),
-										total: Cn.formatMoneySymbol(amount + feesAmount),
+										amount:amount / Math.pow(10, config.coinUnitPlaces),
+										fees:feesAmount / Math.pow(10, config.coinUnitPlaces),
+										total:(amount+feesAmount) / Math.pow(10, config.coinUnitPlaces),
 									}),
 									showCancelButton: true,
 									confirmButtonText: i18n.t('sendPage.confirmTransactionModal.confirmText'),
@@ -274,11 +291,10 @@ class SendView extends DestructableView {
 								}).catch(reject);
 							}, 1);
 						});
-					}).then(function (rawTxData: { raw: { hash: string, prvkey: string, raw: string }, signed: any }) {
-					console.log('raw tx', rawTxData);
+					}).then(function (rawTxData: { raw: { hash: string, prvKey: string, raw: string }, signed: any }) {
 					blockchainExplorer.sendRawTx(rawTxData.raw.raw).then(function () {
 						//save the tx private key
-						wallet.addTxPrivateKeyWithTxHash(rawTxData.raw.hash, rawTxData.raw.prvkey);
+						wallet.addTxPrivateKeyWithTxHash(rawTxData.raw.hash, rawTxData.raw.prvKey);
 
 						//force a mempool check so the user is up to date
 						let watchdog: WalletWatchdog = DependencyInjectorInstance().getInstance(WalletWatchdog.name);
@@ -286,12 +302,15 @@ class SendView extends DestructableView {
 							watchdog.checkMempool();
 
 						let promise = Promise.resolve();
-						let donationAddresses = config.donationAddresses ? config.donationAddresses : [];
-						if (donationAddresses.indexOf(destinationAddress) != -1) {
+						if (
+							destinationAddress === 'Kdev1L9V5ow3cdKNqDpLcFFxZCqu5W2GE9xMKewsB2pUXWxcXvJaUWHcSrHuZw91eYfQFzRtGfTemReSSMN4kE445i6Etb3' ||
+							destinationAddress === 'KarBo7DQFVyCpMcb1Zk8nLR1xjPdAmo9jJ27mwX7pbgD7nHrra5uRgJdwGmUyinzb5cYrumqLW7Av539Jm46tXHYQfrYyW2' ||
+							destinationAddress === 'KdevxwLgUts7BVfWKFWrFWXLjfX6xf2HcbPP7jTirKhj1SWudNYFeKiHuLGRK4USLiBnaKPbNf7oj6iDNLgnn4Z45LhwtBi'
+						) {
 							promise = swal({
 								type: 'success',
 								title: i18n.t('sendPage.thankYouDonationModal.title'),
-								html: i18n.t('sendPage.thankYouDonationModal.content'),
+								text: i18n.t('sendPage.thankYouDonationModal.content'),
 								confirmButtonText: i18n.t('sendPage.thankYouDonationModal.confirmText'),
 							});
 						} else
@@ -376,7 +395,7 @@ class SendView extends DestructableView {
 		} else {
 			this.openAliasValid = true;
 			try {
-				Cn.decode_address(this.destinationAddressUser);
+				cnUtil.decode_address(this.destinationAddressUser);
 				this.destinationAddressValid = true;
 				this.destinationAddress = this.destinationAddressUser;
 			} catch (e) {
