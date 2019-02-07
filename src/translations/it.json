@@ -54,7 +54,7 @@
 	},
 	"bottom": {
 	  "termsOfUse": "Termini di utilizzo",
-	  "privacyPolicy": "Privacy Policy",
+	  "privacyPolicy": "politica sulla riservatezza",
 	  "support": "Supporto",
 	  "donate": "Dona",
 	  "network": "Statistiche del network",
@@ -105,7 +105,7 @@
 		"emptyWallet": "Al momento non disponi di fondi su questo portafoglio",
 		"waitSync": "Si prega di attendere la fine della sincronizzazione",
 		"beReallyPatient": "La prima sincronizzazione potrebbe richiedere alcuni minuti ...",
-		"getB2NAddress": "Ricevi B2N"
+		"getCoinAddress": "Ricevi MSR"
 	  },
 	  "txDetails":{
 		"title":"Dettagli transazione",
@@ -141,7 +141,7 @@
 		"waitingMessage":"Generazione del portafoglio..."
 	  },
 	  "finalizationStep":{
-		"title":"È stato semplice. Il tuo portafoglio è pronto !",
+		"title":"È stato semplice. Il tuo portafoglio è pronto!",
 		"subtitle":"Tenetevi pronti a usare B2N come mai prima d'ora",
 		"passwordSelectionBlock":{
 		  "label":"Proteggi il tuo portafoglio"
@@ -166,7 +166,7 @@
 	  },
 	  "disclaimerBlock":{
 		"title":"Rischi nell'usare B2NWallet",
-		"content":"B2NWallet è una interfaccia web-based. Ti aiuta ad usare B2N senza eseguire un full node. <br/>Vi consigliamo di trattare B2NWallet come trattereste il vostro portafoglio attuale."
+		"content":"B2NWallet è una interfaccia web-based. Ti aiuta ad usare B2N senza eseguire un full node. <br/>Vi consigliamo di trattare MaraiWallet come trattereste il vostro portafoglio attuale."
 	  }
 	},
 	"donatePage":{
@@ -174,19 +174,19 @@
 	  "subtitle":"Aiutaci a finanziare lo sviluppo e a pagare le bollette",
 	  "webwalletBlock":{
 		"title":"Webwallet",
-		"content":"Questo webwallet è sviluppato da CodingRonin nel suo tempo libero.<br/> Se vuoi aiutare lo sviluppo, aiutare a pagare server e ti piace questa applicazione, prendi in considerazione la possibilità di effettuare una piccola donazione.: <br/><br/>"
+		"content":"Questo webwallet è sviluppato da Gnock nel suo tempo libero.<br/> Se vuoi aiutare lo sviluppo, aiutare a pagare server e ti piace questa applicazione, prendi in considerazione la possibilità di effettuare una piccola donazione.: <br/><br/>"
 	  },
-	  "b2nFundBlock":{
+	  "B2NFundBlock":{
 		"title":"Fondo per lo sviluppo di B2N",
 		"content":"Per aiutare B2N puoi donare a questo indirizzo "
 	  }
 	},
 	"supportPage":{
 	  "title":"Support",
-	  "subtitle":"Bisogno di aiuto? siamo qui per aiutarti !",
+	  "subtitle":"Bisogno di aiuto? siamo qui per aiutarti!",
 	  "getInTouchBlock":{
 		"title":"Mettiamoci in contatto!",
-		"content":"Se hai idee o feedback per migliorare il portafoglio, contattaci !",
+		"content":"Se hai idee o feedback per migliorare il portafoglio, contattaci!",
 		"discord":"B2N Discord Channel"
 	  }
 	},
@@ -202,10 +202,11 @@
 	  }
 	},
 	"sendPage":{
-	  "title":"Invia B2N",
+	  "title":"Invia MSR",
 	  "sendBlock":{
 		"address":{
 		  "label":"Indirizzo di destinazione",
+		  "placeholder":"Scrivi l'indirizzo nel quale vuoi inviare i fondi",
 		  "invalid":"L'indirizzo di destinazione è errato",
 		  "fundsTo":"I fondi verranno inviati a ",
 		  "receiver":"Destinatario",
@@ -231,7 +232,7 @@
 		"confirmText":"Ok"
 	  },
 	  "thankYouDonationModal":{
-		"title":"Grazie per la tua donazione !",
+		"title":"Grazie per la tua donazione!",
 		"content":"Il tuo aiuto è molto apprezzato. <br/>Questa donazione contribuirà a rendere B2N ancora migliore",
 		"confirmText":"Ok"
 	  },
@@ -269,7 +270,7 @@
 	  }
 	},
 	"receivePage":{
-	  "title":"Ricevi B2N",
+	  "title":"Ricevi MSR",
 	  "receiveBlock":{
 		"address":{
 		  "title":"Il tuo indirizzo per ricevere i fondi",
@@ -297,7 +298,7 @@
 	},
 	"miningPage":{
 	  "title":"Mina direttamente nel tuo browser",
-	  "subtitle":"Supporta il network minando e ricevi B2N come ricompensa",
+	  "subtitle":"Supporta il network minando e ricevi MSR come ricompensa",
 	  "parameterBlock":{
 		"title":"Parametri",
 		"labelDestinationAddress":"Portafoglio di destinazione",
@@ -311,7 +312,7 @@
 		"hashrate":"Hashrate",
 		"maxHashrate":"Max Hashrate",
 		"dedicatedHardware":"Con software e hardware dedicato al mining potresti raggiungere un hashrate da due a tre volte più elevato.",
-		"miningHandledBy":"Questo mining è gestito dalla pool pool.bitcoin2.network"
+		"miningHandledBy":"Questo mining è gestito dalla pool get.B2Ncoin.com"
 	  }
 	},
 	"settingsPage":{
@@ -351,7 +352,7 @@
 		"title":"Elimina il mio wallet (copia locale)",
 		"content":"Sei VERAMENTE sicuro di voler canecellare il tuo portafoglio?",
 		"confirmText":"Si, sono sicuro",
-		"cancelButtonText":"Annulla"
+		"cancelText":"Annulla"
 	  }
 	},
 	"importBasePage":{
@@ -403,12 +404,12 @@
 	  "walletKeysModal":{
 		"title":"Chiavi private",
 		"confirmText":"Ok",
-		"content":"Si prega di conservare attentamente queste chiavi. <b>Possederle significa possedere i fondi associati</b> !<br/>Spend key: {privSpendKey}<br/>Private view key: {privViewKey}"
+		"content":"Si prega di conservare attentamente queste chiavi. <b>Possederle significa possedere i fondi associati</b>!<br/>Spend key: {privSpendKey}<br/>Private view key: {privViewKey}"
 	  },
 	  "mnemonicKeyModal":{
 		"title":"Frase mnemonica",
 		"confirmText":"Ok",
-		"content":"Si prega di conservare attentamente questa frase mnemonica. <b>Possederla significa possedere i fondi associati</b> ! La frase è:<br/>{mnemonic}"
+		"content":"Si prega di conservare attentamente questa frase mnemonica. <b>Possederla significa possedere i fondi associati</b>! La frase è:<br/>{mnemonic}"
 	  },
 	  "mnemonicLangSelectionModal":{
 		"title":"In che lingua vuoi la tua frase mnemonica?",

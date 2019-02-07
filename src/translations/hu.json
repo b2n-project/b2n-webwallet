@@ -13,7 +13,8 @@
 	  "donate": "Adományozás",
 	  "settings": "Beállítások",
 	  "disconnect": "Szétkapcsolás",
-	  "network": "Hálózati statisztika"
+	  "network": "Hálózati statisztika",
+	  "mining": "Bányászás"
 	},
 	"global": {
 	  "loading": "Betöltés",
@@ -54,7 +55,7 @@
 	},
 	"bottom": {
 	  "termsOfUse": "Felhasználási feltételek",
-	  "privacyPolicy": "Privacy Policy",
+	  "privacyPolicy": "Adatvédelmi irányelvek",
 	  "support": "Ügyfélszolgálat",
 	  "donate": "Adományozás",
 	  "network": "Hálózati statisztika",
@@ -105,7 +106,7 @@
 		"emptyWallet": "Jelenleg nincsen egyenleged ebben a tárcában.",
 		"waitSync": "Kérlek, várj, míg a tárca naprakész lesz",
 		"beReallyPatient": "A kezdeti beállítás némi időbe telhet...",
-		"getB2NAddress": "B2N fogadása"
+		"getCoinAddress": "B2N fogadása"
 	  },
 	  "txDetails":{
 		"title":"Tranzakciórészletek",
@@ -113,7 +114,7 @@
 		"feesOnTx":"Tranzakció díjai",
 		"blockHeight":"Blokk",
 		"paymentId":"Fizetési azonosító",
-		"txPrivKey":"Transaction Private Key"
+        "txPrivKey":"Tranzakció magánkulcs"
 	  }
 	},
 	"changeWalletPasswordPage":{
@@ -165,7 +166,7 @@
 		}
 	  },
 	  "disclaimerBlock":{
-		"title":"A B2NWallet használatának kockázatai",
+		"title":"A MasariWallet használatának kockázatai",
 		"content":"A B2NWallet egy webes felület, mely lehetővé teszi a B2N használatát teljes csomópont futtatása nélkül.<br/>Kezeld úgy a B2NWalletet, mintha az a valódi pénztárcád lenne."
 	  }
 	},
@@ -174,9 +175,9 @@
 	  "subtitle":"Segíts a fejlesztés finanszírozásában és a számlák kifizetésében",
 	  "webwalletBlock":{
 		"title":"Webtárca",
-		"content":"A webtárcát CodingRonin fejleszti szabadidejében.<br/>Ha szeretnéd segíteni a fejlesztést, a szerverek fizetését és tetszik az applikáció, úgy vedd fontolóra az adományozást:<br/><br/>"
+		"content":"A webtárcát Gnock fejleszti szabadidejében.<br/>Ha szeretnéd segíteni a fejlesztést, a szerverek fizetését és tetszik az applikáció, úgy vedd fontolóra az adományozást:<br/><br/>"
 	  },
-	  "b2nFundBlock":{
+	  "devFundBlock":{
 		"title":"B2N fejlesztési alap",
 		"content":"Ha szeretnél segíteni a B2Nnak, az alábbi címekre adományozhatsz"
 	  }
@@ -206,6 +207,7 @@
 	  "sendBlock":{
 		"address":{
 		  "label":"Kedvezményezett címe",
+		  "placeholder":"Írja be azt a címet, ahová pénzt szeretne küldeni",
 		  "invalid":"A kedvezményezett címe érvénytelen",
 		  "fundsTo":"A pénz ide kerül küldésre:",
 		  "receiver":"Fogadás",
@@ -311,7 +313,7 @@
 		"hashrate":"Hashrate",
 		"maxHashrate":"Maximális hashrate",
 		"dedicatedHardware":"Bányászásra dedikált szoftver és hardver használatával nagyobb bevételre tehetsz szert és segíthetsz a hálózat decentralizálásában.",
-		"miningHandledBy":"Ezt a bányászást a pool.bitcoin2.network pool kezeli"
+		"miningHandledBy":"Ezt a bányászást a get.masaricoin.com pool kezeli"
 	  }
 	},
 	"settingsPage":{
@@ -351,7 +353,7 @@
 		"title":"Tárca törlése (helyi másolat)",
 		"content":"Biztosan törölni szeretnéd a tárcádat?",
 		"confirmText":"Igen, biztosan",
-		"cancelButtonText":"Mégsem"
+		"cancelText":"Mégsem"
 	  }
 	},
 	"importBasePage":{

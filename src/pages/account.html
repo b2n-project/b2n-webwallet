@@ -24,7 +24,7 @@
 				<div class="content" >
 					<span class="walletAmount" >{{ $n(walletAmount / currencyDivider) }}</span> B2N
 					<tempate class="amount unlocked" v-if="unlockedWalletAmount !== walletAmount" >
-						<br/><span class="walletAmount" >{{ $t("accountPage.balanceBlock.unlocked") }}: {{ $n(unlockedWalletAmount / currencyDivider) }}</span> B2N
+						<br/>{{ $t("accountPage.balanceBlock.unlocked") }}: <span class="walletAmount" >{{ $n(unlockedWalletAmount / currencyDivider) }}</span> B2N
 					</tempate>
 				</div>
 			</div>
@@ -35,7 +35,7 @@
 				<div class="header-title" >{{ $t("accountPage.historyBlock.title") }}</div>
 				<div class="content" >
 
-					<div class="transactions" >
+					<div class="transactions" id="accountTransactions">
 						<table>
 							<template v-for="transaction of transactions" v-if="transaction.isFullyChecked()">
 								<tr class="transaction" :class="(transaction.blockHeight === 0 ? 'pending' : '')">
@@ -45,7 +45,7 @@
 									</td><!--LEfT-->
 									<td class="timestamp" v-if="transaction.blockHeight > 0">{{$d(new Date(transaction.timestamp*1000), 'long')}}</td>
 									<td class="timestamp" v-else="">{{ $t("accountPage.historyBlock.pendingTxStatus") }}...</td>
-									<td :class="'amount '+(transaction.getAmount() > 0 ? 'more' : 'less')" >{{ $n(transaction.getAmount() / currencyDivider) }}</td>
+									<td :class="'amount '+(transaction.getAmount() > 0 ? 'more' : 'less')" >{{ transaction.getAmount() / currencyDivider }}</td>
 									<td class="moreInfo">
 										<i class="fa fa-search" aria-hidden="true" @click="moreInfoOnTx(transaction)"></i>
 									</td>
@@ -64,7 +64,7 @@
 										</template>
 									</span><br>
 									<div class="actions tc" >
-										<a href="#receive" class="btn">{{ $t("accountPage.historyBlock.getB2NAddress") }}</a>
+										<a href="#receive" class="btn">{{ $t("accountPage.historyBlock.getCoinAddress") }}</a>
 									</div>
 								</td>
 							</tr>

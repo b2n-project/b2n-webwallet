@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -15,12 +14,12 @@
 <script>
 	var clickButton = document.getElementById('payButton');
 
-	function b2nLoaded(){
+	function MasariLoaded(){
 		clickButton.disabled = false;
 		clickButton.addEventListener("click", function(){
-			b2nApi.makeTransfer({
+			MasariApi.makeTransfer({
 				amount:10,
-				address:'wallet.bitcoin2.network',
+				address:'wallet.masaricoin.com',
 				description:'Description',
 				destName:'Webwallet',
 				redirect:encodeURIComponent(window.location.href)
@@ -30,12 +29,12 @@
 		});
 
 		console.log('LOADED CALLBACK');
-		b2nApi.hasWallet().then(function(hasWAllet){
+		MasariApi.hasWallet().then(function(hasWAllet){
 			console.log('HAS WALLET');
 			console.log(hasWAllet);
 		});
 	}
-	b2nApi.init().then(b2nLoaded);
+	MasariApi.init().then(MasariLoaded);
 
 </script>
 

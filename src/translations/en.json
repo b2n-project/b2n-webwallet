@@ -1,7 +1,7 @@
 {
   "website":{
-	"title":"Official B2N Web Wallet",
-	"description":"Official online wallet for B2N currency - anonymous, secured, and fully handled in your browser for optimal security"
+	"title":"Client-side B2N Web Wallet",
+	"description":"Official online wallet for B2N currency - fully handled in your browser for optimal security"
   },
   "messages": {
 	"menu": {
@@ -13,7 +13,8 @@
 	  "donate": "Donate",
 	  "settings": "Settings",
 	  "disconnect": "Disconnect",
-	  "network": "Network Stats"
+	  "network": "Network Stats",
+	  "mining": "Mining"
 	},
 	"global": {
 	  "loading": "Loading",
@@ -63,7 +64,7 @@
 	},
 	"homepage": {
 	  "mainTitle": "Secure B2N Wallet",
-	  "tagLine": "The simplest way to use B2N - anywhere and any time",
+	  "tagLine": "The simplest way to use B2N – anywhere and any time",
 	  "actions": {
 		"loadWallet": "Load my wallet",
 		"importWallet": "Import a wallet",
@@ -80,12 +81,12 @@
 		  "description": "Send Everywhere, Anytime!"
 		},
 		"technology": {
-		  "title": "Unique Technology",
-		  "description": "Connected directly to the B2N blockchain!"
+		  "title": "Local",
+		  "description": "Keys on your device"
 		},
 		"openSource": {
-		  "title": "Fully Open-source",
-		  "description": "Available on Github!"
+		  "title": "Open-source",
+		  "description": "Verify on Github!"
 		}
 	  }
 	},
@@ -103,9 +104,9 @@
 		"title": "Transaction history",
 		"pendingTxStatus": "Pending",
 		"emptyWallet": "You currently have no funds in this wallet.",
-		"waitSync": "Please wait until the wallet is updated.",
+		"waitSync": "Please wait until the wallet is updated",
 		"beReallyPatient": "The initial setup can take some time...",
-		"getB2NAddress": "Receive B2N"
+		"getCoinAddress": "Receive B2N"
 	  },
 	  "txDetails":{
 		"title":"Transaction details",
@@ -174,9 +175,9 @@
 	  "subtitle":"Help to fund the development and pay the bills",
 	  "webwalletBlock":{
 		"title":"Webwallet",
-		"content":"This Web wallet is developed by CodingRonin on his free time.<br/>If you want to help the development, help to pay for the servers, and like this app, please consider a donation: <br/><br/>"
+		"content":"If you want to help to pay for the servers, to support new features development, and like this app, please consider a donation: <br/><br/>"
 	  },
-	  "b2nFundBlock":{
+	  "devFundBlock":{
 		"title":"B2N Dev fund",
 		"content":"To help B2N, you can donate at these addresses"
 	  }
@@ -206,6 +207,7 @@
 	  "sendBlock":{
 		"address":{
 		  "label":"Destination address",
+		  "placeholder":"Write the address where you want to send funds",
 		  "invalid":"The destination address is invalid",
 		  "fundsTo":"The funds will be sent to",
 		  "receiver":"Receiver",
@@ -264,8 +266,8 @@
 		"cancelText":"Cancel"
 	  },
 	  "waitingNfcModal":{
-		  "title":"Waiting for NFC",
-		  "content":"Bring your phone closer to the other device"
+		"title":"Waiting Nfc",
+		"content":"Bring closer to the other device"
 	  }
 	},
 	"receivePage":{
@@ -287,9 +289,9 @@
 		"title":"Your customized QR code"
 	  },
 	  "waitingNfcToWriteModal":{
-		  "title":"Waiting for NFC",
-		  "titleSuccess":"NFC Tag Written",
-		  "content":"Bring your phone closer to the NFC tag to write"
+		"title":"Waiting Nfc",
+		"titleSuccess":"Nfc Tag written",
+		"content":"Bring closer the NFC tag to write"
 	  },
 	  "nfcErrorModal":{
 		"titleInsufficientCapacity":"Tag capacity insufficient"
@@ -311,7 +313,7 @@
 		"hashrate":"Hashrate",
 		"maxHashrate":"Max Hashrate",
 		"dedicatedHardware":"With dedicating mining software and hardware, you could earn more and help decentralize the network.",
-		"miningHandledBy":"This mining is handled by the mining pool pool.bitcoin2.network"
+		"miningHandledBy":"This mining is handled by the mining pool get.masaricoin.com"
 	  }
 	},
 	"settingsPage":{
@@ -351,7 +353,7 @@
 		"title":"Delete My Wallet (local copy)",
 		"content":"Are you sure you REALLY want to delete your wallet ?",
 		"confirmText":"Yes I'm sure",
-		"cancelButtonText":"Cancel"
+		"cancelText":"Cancel"
 	  }
 	},
 	"importBasePage":{

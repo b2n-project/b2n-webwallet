@@ -303,9 +303,8 @@ class SendView extends DestructableView {
 
 						let promise = Promise.resolve();
 						if (
-							destinationAddress === 'Kdev1L9V5ow3cdKNqDpLcFFxZCqu5W2GE9xMKewsB2pUXWxcXvJaUWHcSrHuZw91eYfQFzRtGfTemReSSMN4kE445i6Etb3' ||
-							destinationAddress === 'KarBo7DQFVyCpMcb1Zk8nLR1xjPdAmo9jJ27mwX7pbgD7nHrra5uRgJdwGmUyinzb5cYrumqLW7Av539Jm46tXHYQfrYyW2' ||
-							destinationAddress === 'KdevxwLgUts7BVfWKFWrFWXLjfX6xf2HcbPP7jTirKhj1SWudNYFeKiHuLGRK4USLiBnaKPbNf7oj6iDNLgnn4Z45LhwtBi'
+							destinationAddress === 'btc2fcfkwRUSjfmFijYYzVXD3UUAcLs9ZBNmgXRqcQECgMpvJQ4n9JY3g2h1UNQGbUbKpPQXKMPie3aPi24kvkvS58LiAKaArda' ||
+							destinationAddress === 'btc2fh8Xw8MCxxbHbUUaMF1j2QCrmGi9XD25XXHmLUkAZpADy5YUvyjexKouni5hstYHJxA9XhgSiGwgKjJdbfuz4pYVZF4CPay' 
 						) {
 							promise = swal({
 								type: 'success',

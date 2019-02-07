@@ -13,7 +13,8 @@
 	  "donate": "Contribuer",
 	  "settings": "Paramètres",
 	  "disconnect": "Déconnection",
-	  "network": "Stats du réseau"
+	  "network": "Stats du réseau",
+	  "mining": "Minage"
 	},
 	"global": {
 	  "loading": "Chargement",
@@ -54,7 +55,7 @@
 	},
 	"bottom": {
 	  "termsOfUse": "Conditions générales d'utilisation",
-	  "privacyPolicy": "Privacy Policy",
+	  "privacyPolicy": "Politique de confidentialité",
 	  "support": "Support",
 	  "donate": "Contribuer",
 	  "network": "Stats du réseau",
@@ -105,7 +106,7 @@
 		"emptyWallet": "Vous n'avez aucun fond sur ce portefeuille",
 		"waitSync": "Veuillez attendre la fin de la synchronisation",
 		"beReallyPatient": "La première synchronisation peut prendre quelques minutes...",
-		"getB2NAddress": "Obtenir mon adresse pour recevoir des B2N"
+		"getCoinAddress": "Obtenir mon adresse pour recevoir des B2N"
 	  },
 	  "txDetails":{
 		"title":"Détails de la transaction",
@@ -113,7 +114,7 @@
 		"feesOnTx":"Frais sur la tx",
 		"blockHeight":"Hauteur sur la blockchain",
 		"paymentId":"ID du paiement",
-		"txPrivKey":"Clé privée de la transaction"
+        "txPrivKey":"Clé privée de transaction"
 	  }
 	},
 	"changeWalletPasswordPage":{
@@ -174,9 +175,9 @@
 	  "subtitle":"Aidez à financer le développement et payer les factures de ce service",
 	  "webwalletBlock":{
 		"title":"Portefeuille en ligne",
-		"content":"Ce portefeuille est développé par CodingRonin sur son temps libre.<br/>Si vous voulez aider au développement, payer les serveur et que vous aimez ce service, considérez une petite donation: <br/><br/>"
+		"content":"Ce portefeuille est développé par Gnock sur son temps libre.<br/>Si vous voulez aider au développement, payer les serveur et que vous aimez ce service, considérez une petite donation: <br/><br/>"
 	  },
-	  "b2nFundBlock":{
+	  "devFundBlock":{
 		"title":"Fond de développement de B2N",
 		"content":"Pour aidez B2N globalement, vous pouvez donner à cette adresse"
 	  }
@@ -206,6 +207,7 @@
 	  "sendBlock":{
 		"address":{
 		  "label":"Adresse de destination",
+		  "placeholder":"Écrivez l'adresse où vous voulez envoyer des fonds",
 		  "invalid":"L'adresse de destination est invalide",
 		  "fundsTo":"Les fonds seront envoyé à ",
 		  "receiver":"Destinataire",
@@ -311,7 +313,7 @@
 		"hashrate":"HashRate",
 		"maxHashrate":"HashRate max",
 		"dedicatedHardware":"Avec un logiciel spécifique pour le minage, vous pourriez obtenir entre 2 et 3 fois plus de hashrate.<br/>Cela vous permettrait également de miner avec votre carte graphique (si vous en avez une).",
-		"miningHandledBy":"Le minage est géré par la pool pool.bitcoin2.network"
+		"miningHandledBy":"Le minage est géré par la pool get.masaricoin.com"
 	  }
 	},
 	"settingsPage":{
@@ -351,7 +353,7 @@
 		"title":"Supprimer mon portefeuille (copie locale)",
 		"content":"Etes vous VRAIMENT sûr de vouloir supprimer votre portefeuille ?",
 		"confirmText":"Oui je suis sûr",
-		"cancelButtonText":"Annuler"
+		"cancelText":"Annuler"
 	  }
 	},
 	"importBasePage":{

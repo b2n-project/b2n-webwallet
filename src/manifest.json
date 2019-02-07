@@ -1,6 +1,6 @@
 {
   "name": "B2N Web Wallet",
-  "short_name": "bitcoin2network",
+  "short_name": "B2NWallet",
   "icons": [{
 	"src": "assets/img/icons/icon-128x128.png",
 	"sizes": "128x128",
@@ -24,6 +24,6 @@
   }],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#658289",
-  "theme_color": "#4cb860"
+  "background_color": "#30466C",
+  "theme_color": "#30466C"
 }

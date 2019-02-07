@@ -13,7 +13,8 @@
 	  "donate": "Spenden",
 	  "settings": "Einstellungen",
 	  "disconnect": "Verbindung trennen",
-	  "network": "Netzwerkstatus"
+	  "network": "Netzwerkstatus",
+	  "mining": "Minen"
 	},
 	"global": {
 	  "loading": "wird geladen",
@@ -54,7 +55,7 @@
 	},
 	"bottom": {
 	  "termsOfUse": "Nutzungsbedingungen",
-	  "privacyPolicy": "Privacy Policy",
+	  "privacyPolicy": "Datenschutzrichtlinie",
 	  "support": "Support",
 	  "donate": "Spenden",
 	  "network": "Netzwerkstatus",
@@ -105,7 +106,7 @@
 		"emptyWallet": "Du hast zur Zeit kein Guthaben auf dieser Wallet",
 		"waitSync": "Warte bis die Wallet upgedated ist",
 		"beReallyPatient": "Die erste Einrichtung kann etwas dauern...",
-		"getB2NAddress": "Hol die deine Adresse um B2N zu empfangen"
+		"getCoinAddress": "Hol die deine Adresse um B2N zu empfangen"
 	  },
 	  "txDetails":{
 		"title":"Transaktionsdetails",
@@ -113,7 +114,7 @@
 		"feesOnTx":"Gebühren der tx",
 		"blockHeight":"Blockhöhe",
 		"paymentId":"Payment ID",
-		"txPrivKey":"Transaction Private Key"
+        "txPrivKey":"Privater Schlüssel für die Transaktion"
 	  }
 	},
 	"changeWalletPasswordPage":{
@@ -174,9 +175,9 @@
 	  "subtitle":"Hilf uns die Enwicklung zu finanzieren und die Rechnungen zu bezahlen",
 	  "webwalletBlock":{
 		"title":"Webwallet",
-		"content":"Diese Webwallet ist von CodingRonin in seiner Freizeit entwickelt.<br/>Bitte denk über eine Spende nach wenn dir die App gefällt und du bei der Bezahlung der Server und der Enwicklung helfen willst.: <br/><br/>"
+		"content":"Diese Webwallet ist von Gnock in seiner Freizeit entwickelt.<br/>Bitte denk über eine Spende nach wenn dir die App gefällt und du bei der Bezahlung der Server und der Enwicklung helfen willst.: <br/><br/>"
 	  },
-	  "b2nFundBlock":{
+	  "devFundBlock":{
 		"title":"B2N Entwicklerfonds",
 		"content":"Spende an diese Adresse um B2N zu helfen"
 	  }
@@ -206,6 +207,7 @@
 	  "sendBlock":{
 		"address":{
 		  "label":"Zieladresse",
+		  "placeholder":"Schreiben Sie die Adresse, wo Sie wollen Mittel schicken",
 		  "invalid":"Die Zieladresse ist ungültig",
 		  "fundsTo":"Das Guthaben wird an folgende Adresse gesendet werden",
 		  "receiver":"Empfänger",
@@ -311,7 +313,7 @@
 		"hashrate":"Hashrate",
 		"maxHashrate":"Max Hashrate",
 		"dedicatedHardware":"Mit spezieller Software könnetest du zwei- bis dreimal höhere Hashraten erreichen.<br/>Spezielle Software würde auch mithilfe einer Grafikkarte minen(wenn du einge Gaming GPU hast).",
-		"miningHandledBy":"Minen erfolgt über den Mining Pool pool.bitcoin2.network"
+		"miningHandledBy":"Minen erfolgt über den Mining Pool get.masaricoin.com"
 	  }
 	},
 	"settingsPage":{
@@ -351,7 +353,7 @@
 		"title":"Lösche meine Wallet (lokale Kopie)",
 		"content":"Bist du SICHER das du deine Wallet löschen möchtest?",
 		"confirmText":"Ja, ich bin sicher",
-		"cancelButtonText":"Abbrechen"
+		"cancelText":"Abbrechen"
 	  }
 	},
 	"importBasePage":{
